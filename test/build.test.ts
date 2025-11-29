@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync, readdirSync } from 'fs';
 import { join } from 'path';
 
 const execAsync = promisify(exec);
@@ -50,6 +50,16 @@ describe('Build', () => {
     expect(content).not.toContain('console.log');
     expect(content).not.toContain('debugger');
   });
+
+  it('should generate favicon.svg', () => {
+    const faviconPath = join(process.cwd(), 'dist', 'favicon.svg');
+    expect(existsSync(faviconPath)).toBe(true);
+  });
+
+  it('should generate robots.txt', () => {
+    const robotsPath = join(process.cwd(), 'dist', 'robots.txt');
+    expect(existsSync(robotsPath)).toBe(true);
+  });
 });
 
 describe('Content Quality', () => {
@@ -70,5 +80,66 @@ describe('Content Quality', () => {
     expect(content).not.toContain('Lorem ipsum');
     expect(content).not.toContain('TODO');
     expect(content).not.toContain('FIXME');
+  });
+});
+
+describe('SEO', () => {
+  it('should have Open Graph meta tags', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const content = readFileSync(indexPath, 'utf-8');
+
+    expect(content).toContain('og:title');
+    expect(content).toContain('og:description');
+    expect(content).toContain('og:type');
+  });
+
+  it('should have Twitter card meta tags', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const content = readFileSync(indexPath, 'utf-8');
+
+    expect(content).toContain('twitter:card');
+    expect(content).toContain('twitter:title');
+  });
+
+  it('should have canonical URL', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const content = readFileSync(indexPath, 'utf-8');
+
+    expect(content).toContain('rel="canonical"');
+  });
+});
+
+describe('Accessibility', () => {
+  it('should have proper HTML structure', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const content = readFileSync(indexPath, 'utf-8');
+
+    // Check for semantic HTML
+    expect(content).toContain('<header');
+    expect(content).toContain('<main');
+    expect(content).toContain('<footer');
+  });
+
+  it('should have proper heading hierarchy', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const content = readFileSync(indexPath, 'utf-8');
+
+    // Should have h1
+    expect(content).toContain('<h1');
+    
+    // h1 should appear before h2
+    const h1Index = content.indexOf('<h1');
+    const h2Index = content.indexOf('<h2');
+    expect(h1Index).toBeLessThan(h2Index);
+  });
+});
+
+describe('Performance', () => {
+  it('should have reasonable HTML size', () => {
+    const indexPath = join(process.cwd(), 'dist', 'index.html');
+    const stats = require('fs').statSync(indexPath);
+    
+    // HTML should be under 100KB (reasonable for a landing page)
+    expect(stats.size).toBeLessThan(100 * 1024);
   });
 });
