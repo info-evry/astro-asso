@@ -1,23 +1,35 @@
 ---
+import associationInfo from '../../knowledge/src/association/info.json';
+
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
   {
-    name: 'Instagram',
-    href: 'https://instagram.com/info_evry',
-    icon: `<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`
+    name: 'Discord',
+    href: associationInfo.social.discord.url,
+    icon: `<path d="M9 12h.01M15 12h.01M10 16s1.5 1 2 1 2-1 2-1M20.84 4.61a19.57 19.57 0 0 0-4.5-1.39.07.07 0 0 0-.08.03c-.2.35-.42.81-.58 1.17a18.2 18.2 0 0 0-5.36 0c-.16-.36-.38-.82-.58-1.17a.08.08 0 0 0-.08-.03 19.5 19.5 0 0 0-4.5 1.39.07.07 0 0 0-.03.02C2.43 8.62 1.73 12.5 2.07 16.35a.08.08 0 0 0 .03.05c1.82 1.34 3.59 2.15 5.32 2.69a.08.08 0 0 0 .09-.03c.41-.56.78-1.16 1.09-1.78a.08.08 0 0 0-.04-.11 12.9 12.9 0 0 1-1.83-.87.08.08 0 0 1 0-.13c.12-.09.25-.18.37-.28a.08.08 0 0 1 .08-.01c3.85 1.76 8.02 1.76 11.83 0a.08.08 0 0 1 .08.01c.12.1.25.19.37.28a.08.08 0 0 1 0 .13c-.58.34-1.19.63-1.83.87a.08.08 0 0 0-.04.11c.32.62.69 1.22 1.09 1.78a.08.08 0 0 0 .09.03c1.74-.54 3.5-1.35 5.32-2.69a.08.08 0 0 0 .03-.05c.4-4.17-.68-7.79-2.89-10.98a.07.07 0 0 0-.03-.03z" stroke="currentColor" stroke-width="1.5" fill="none"/>`
   },
   {
-    name: 'Discord',
-    href: 'https://info-evry.fr',
-    icon: `<path d="M9 12h.01M15 12h.01M10 16s1.5 1 2 1 2-1 2-1M20.84 4.61a19.57 19.57 0 0 0-4.5-1.39.07.07 0 0 0-.08.03c-.2.35-.42.81-.58 1.17a18.2 18.2 0 0 0-5.36 0c-.16-.36-.38-.82-.58-1.17a.08.08 0 0 0-.08-.03 19.5 19.5 0 0 0-4.5 1.39.07.07 0 0 0-.03.02C2.43 8.62 1.73 12.5 2.07 16.35a.08.08 0 0 0 .03.05c1.82 1.34 3.59 2.15 5.32 2.69a.08.08 0 0 0 .09-.03c.41-.56.78-1.16 1.09-1.78a.08.08 0 0 0-.04-.11 12.9 12.9 0 0 1-1.83-.87.08.08 0 0 1 0-.13c.12-.09.25-.18.37-.28a.08.08 0 0 1 .08-.01c3.85 1.76 8.02 1.76 11.83 0a.08.08 0 0 1 .08.01c.12.1.25.19.37.28a.08.08 0 0 1 0 .13c-.58.34-1.19.63-1.83.87a.08.08 0 0 0-.04.11c.32.62.69 1.22 1.09 1.78a.08.08 0 0 0 .09.03c1.74-.54 3.5-1.35 5.32-2.69a.08.08 0 0 0 .03-.05c.4-4.17-.68-7.79-2.89-10.98a.07.07 0 0 0-.03-.03z" stroke="currentColor" stroke-width="1.5" fill="none"/>`
+    name: 'Telegram',
+    href: associationInfo.social.telegram.url,
+    icon: `<path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`
+  },
+  {
+    name: 'Instagram',
+    href: associationInfo.social.instagram.url,
+    icon: `<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>`
+  },
+  {
+    name: 'GitHub',
+    href: associationInfo.social.github.url,
+    icon: `<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`
   }
 ];
 
 const footerLinks = [
-  { label: 'Info Évry', href: 'https://info-evry.fr' },
-  { label: 'ECAMPUS', href: 'https://ecampus.paris-saclay.fr' },
-  { label: 'Contact', href: 'mailto:contact@info-evry.fr' }
+  { label: 'Drive partagé', href: associationInfo.resources.drive.url },
+  { label: 'eCampus', href: associationInfo.resources.ecampus.url },
+  { label: 'Contact', href: `mailto:${associationInfo.contact.email}` }
 ];
 ---
 
@@ -26,12 +38,11 @@ const footerLinks = [
     <div class="footer-content">
       <div class="footer-brand">
         <a href="/" class="footer-logo">
-          <span class="logo-text">Info</span>
+          <span class="logo-text">Asso Info</span>
           <span class="logo-accent">Évry</span>
         </a>
         <p class="footer-tagline">
-          Association des Étudiants en Informatique<br/>
-          Université d'Évry Paris-Saclay
+          {associationInfo.description}
         </p>
       </div>
 
@@ -56,6 +67,7 @@ const footerLinks = [
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
+              title={social.name}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" set:html={social.icon} />
             </a>
@@ -66,7 +78,7 @@ const footerLinks = [
 
     <div class="footer-bottom">
       <p class="copyright">
-        © {currentYear} Association Info Évry. Tous droits réservés.
+        © {currentYear} {associationInfo.fullName}. Tous droits réservés.
       </p>
     </div>
   </div>
