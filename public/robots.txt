@@ -1,0 +1,8 @@
+# Robots.txt for Asso Info Evry
+# https://asso.info-evry.fr
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://asso.info-evry.fr/sitemap.xml

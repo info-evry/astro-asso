@@ -1,0 +1,16 @@
+{
+  "name": "Asso Info Evry",
+  "short_name": "Info Evry",
+  "description": "Association des Étudiants en Informatique de l'Université d'Évry Paris-Saclay",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,13 +1,23 @@
 ---
+import associationInfo from '../../knowledge/src/association/info.json';
+
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
-  description = "Association des Étudiants en Informatique de l'Université d'Évry Paris-Saclay - Depuis 1993"
+  description = "Association des Étudiants en Informatique de l'Université d'Évry Paris-Saclay",
+  image = "/og-image.png",
+  noindex = false
 } = Astro.props;
+
+const siteUrl = associationInfo.sites.asso.url;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(image, siteUrl).href;
 ---
 
 <!DOCTYPE html>
@@ -15,22 +25,50 @@ const {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={description}>
-  <meta name="theme-color" content="#000000">
 
-  <!-- Open Graph -->
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title}>
+  <meta name="description" content={description}>
+  <meta name="author" content={associationInfo.fullName}>
+  <meta name="theme-color" content="#0ea5e9">
+  <meta name="color-scheme" content="dark">
+  {noindex && <meta name="robots" content="noindex, nofollow">}
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalUrl}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:type" content="website">
+  <meta property="og:image" content={ogImageUrl}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content={associationInfo.name}>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={canonicalUrl}>
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImageUrl}>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Preload Inter font -->
-  <link rel="preconnect" href="https://rsms.me">
+  <!-- Performance: Preconnect to external origins -->
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link rel="dns-prefetch" href="https://rsms.me">
+
+  <!-- Inter Font -->
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
-  <title>{title}</title>
 </head>
 <body>
   <slot />
