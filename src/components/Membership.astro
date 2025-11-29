@@ -1,11 +1,7 @@
 ---
-const benefits = [
-  'Accès aux ressources partagées',
-  'Participation aux événements',
-  'Réseau d\'entraide entre étudiants',
-  'Projets collaboratifs',
-  'Contact avec les entreprises partenaires'
-];
+import associationInfo from '../../knowledge/src/association/info.json';
+
+const benefits = associationInfo.membership.benefits;
 ---
 
 <section id="adhesion" class="section membership">
@@ -18,9 +14,9 @@ const benefits = [
 
       <div class="membership-content">
         <span class="section-label">Adhésion</span>
-        <h2 class="membership-title">Rejoindre l'association</h2>
+        <h2 class="membership-title">Rejoindre {associationInfo.name}</h2>
         <p class="membership-description">
-          Devenez membre de l'Association Info Évry et accédez
+          Devenez membre de l'{associationInfo.fullName} et accédez
           à toutes les ressources de la communauté étudiante.
         </p>
 
@@ -40,7 +36,7 @@ const benefits = [
             <a href="https://asso.info-evry.fr/inscriptions" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
               S'inscrire
             </a>
-            <a href="mailto:asso@info-evry.fr?subject=Adhésion%20-%20Question" class="btn btn-secondary btn-lg">
+            <a href={`mailto:${associationInfo.contact.assoEmail}?subject=Adhésion%20-%20Question`} class="btn btn-secondary btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>

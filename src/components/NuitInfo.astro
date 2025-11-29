@@ -1,5 +1,5 @@
 ---
-
+import ndiEvent from '../../knowledge/src/ndi/event.json';
 ---
 
 <section id="ndi" class="section ndi">
@@ -7,10 +7,9 @@
     <div class="ndi-wrapper">
       <div class="ndi-content">
         <span class="section-label">Événement annuel</span>
-        <h2 class="ndi-title">La Nuit de l'Info</h2>
+        <h2 class="ndi-title">{ndiEvent.name}</h2>
         <p class="ndi-description">
-          Une compétition nationale de développement web qui rassemble chaque année
-          des étudiants, enseignants et entreprises autour d'un défi commun.
+          {ndiEvent.description}
         </p>
 
         <div class="ndi-features">
@@ -22,8 +21,8 @@
               </svg>
             </div>
             <div class="feature-text">
-              <span class="feature-title">16 heures</span>
-              <span class="feature-desc">Du coucher au lever du soleil</span>
+              <span class="feature-title">{ndiEvent.dates.duration}</span>
+              <span class="feature-desc">{ndiEvent.dates.durationLabel}</span>
             </div>
           </div>
 
@@ -88,10 +87,10 @@
               </div>
               <div class="code-body">
                 <pre><code><span class="code-keyword">const</span> <span class="code-var">ndi</span> = &#123;
-  <span class="code-prop">date</span>: <span class="code-string">"Premier jeudi de décembre"</span>,
-  <span class="code-prop">durée</span>: <span class="code-string">"16 heures"</span>,
-  <span class="code-prop">objectif</span>: <span class="code-string">"Créer une app web"</span>,
-  <span class="code-prop">ambiance</span>: <span class="code-string">"Pizza + Code + Fun"</span>
+  <span class="code-prop">edition</span>: <span class="code-string">"{ndiEvent.edition}"</span>,
+  <span class="code-prop">durée</span>: <span class="code-string">"{ndiEvent.dates.duration}"</span>,
+  <span class="code-prop">équipes</span>: <span class="code-string">"{ndiEvent.stats.teams2024}+"</span>,
+  <span class="code-prop">sites</span>: <span class="code-string">"{ndiEvent.stats.sites2024}"</span>
 &#125;;
 
 <span class="code-keyword">function</span> <span class="code-func">participer</span>() &#123;
