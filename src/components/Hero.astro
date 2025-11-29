@@ -1,0 +1,347 @@
+---
+
+---
+
+<section class="hero">
+  <!-- Animated Background Orbs -->
+  <div class="hero-bg">
+    <div class="orb orb-purple"></div>
+    <div class="orb orb-blue"></div>
+    <div class="orb orb-pink"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="hero-content container">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>Association Etudiante</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="title-line">Association</span>
+      <span class="title-line gradient-text">d'Informatique</span>
+      <span class="title-line">d'Evry</span>
+    </h1>
+
+    <p class="hero-description">
+      La communaute des etudiants en informatique de l'Universite d'Evry.
+      Ressources, evenements, et entraide pour reussir ensemble.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#membership" class="btn btn-primary btn-lg">
+        Rejoindre l'association
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#about" class="btn btn-secondary btn-lg">
+        Decouvrir
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-value">500+</span>
+        <span class="stat-label">Etudiants</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value">10+</span>
+        <span class="stat-label">Evenements/an</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-value">5</span>
+        <span class="stat-label">Annees</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  /* Background */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    animation: float 25s ease-in-out infinite;
+  }
+
+  .orb-purple {
+    width: 600px;
+    height: 600px;
+    background: rgba(139, 92, 246, 0.4);
+    top: -200px;
+    right: -100px;
+  }
+
+  .orb-blue {
+    width: 500px;
+    height: 500px;
+    background: rgba(59, 130, 246, 0.35);
+    bottom: -150px;
+    left: -100px;
+    animation-delay: -8s;
+  }
+
+  .orb-pink {
+    width: 400px;
+    height: 400px;
+    background: rgba(217, 70, 239, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -15s;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  }
+
+  /* Content */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-purple);
+    margin-bottom: var(--space-8);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-purple);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Title */
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-6);
+  }
+
+  .title-line {
+    display: block;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .title-line:nth-child(1) { animation-delay: 100ms; }
+  .title-line:nth-child(2) { animation-delay: 200ms; }
+  .title-line:nth-child(3) { animation-delay: 300ms; }
+
+  /* Description */
+  .hero-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 540px;
+    margin-bottom: var(--space-10);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 400ms forwards;
+  }
+
+  /* Actions */
+  .hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: var(--space-16);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 500ms forwards;
+  }
+
+  /* Stats */
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    padding: var(--space-6) var(--space-8);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 600ms forwards;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .stat-value {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-default);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1s forwards;
+  }
+
+  .scroll-mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid var(--border-default);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .scroll-wheel {
+    width: 3px;
+    height: 8px;
+    background: var(--color-text-muted);
+    border-radius: 2px;
+    animation: scrollWheel 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollWheel {
+    0%, 100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(6px);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 100px;
+      min-height: auto;
+      padding-bottom: var(--space-16);
+    }
+
+    .hero-badge {
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-description {
+      font-size: var(--text-base);
+      padding: 0 var(--space-4);
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 var(--space-4);
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-5);
+    }
+
+    .stat-divider {
+      width: 60px;
+      height: 1px;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+
+    .orb-purple {
+      width: 300px;
+      height: 300px;
+    }
+
+    .orb-blue {
+      width: 250px;
+      height: 250px;
+    }
+
+    .orb-pink {
+      width: 200px;
+      height: 200px;
+    }
+  }
+</style>

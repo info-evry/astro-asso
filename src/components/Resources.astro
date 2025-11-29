@@ -1,0 +1,236 @@
+---
+const resources = [
+  {
+    title: 'ECAMPUS',
+    description: 'Plateforme officielle de cours et ressources pedagogiques',
+    href: 'https://ecampus.paris-saclay.fr',
+    icon: 'book',
+    gradient: 'purple'
+  },
+  {
+    title: 'Drive',
+    description: 'Contenus partages, annales et ressources etudiantes',
+    href: 'https://info-evry.fr',
+    icon: 'folder',
+    gradient: 'blue'
+  },
+  {
+    title: 'Discord',
+    description: 'Serveur de communication et d\'entraide entre etudiants',
+    href: 'https://info-evry.fr',
+    icon: 'chat',
+    gradient: 'pink'
+  },
+  {
+    title: 'Telegram',
+    description: 'Groupe de partage d\'informations et d\'actualites',
+    href: 'https://info-evry.fr',
+    icon: 'send',
+    gradient: 'cyan'
+  },
+  {
+    title: 'Info Evry',
+    description: 'Portail etudiant avec emploi du temps et outils',
+    href: 'https://info-evry.fr',
+    icon: 'globe',
+    gradient: 'green'
+  },
+  {
+    title: 'Contact',
+    description: 'Contacter les representants de l\'association',
+    href: '#contact',
+    icon: 'mail',
+    gradient: 'orange'
+  }
+];
+
+const icons = {
+  book: `<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  folder: `<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  chat: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  send: `<line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
+  globe: `<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/>`,
+  mail: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
+};
+---
+
+<section id="resources" class="section resources">
+  <div class="container">
+    <div class="section-header" data-animate>
+      <span class="section-label">Ressources</span>
+      <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+      <p class="section-description">
+        Acces rapide a toutes les plateformes et outils essentiels
+        pour votre parcours en informatique.
+      </p>
+    </div>
+
+    <div class="resources-grid">
+      {resources.map((resource, index) => (
+        <a
+          href={resource.href}
+          target={resource.href.startsWith('http') ? '_blank' : undefined}
+          rel={resource.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          class={`resource-card gradient-${resource.gradient}`}
+          data-animate
+          style={`--delay: ${(index + 1) * 100}ms`}
+        >
+          <div class="resource-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" set:html={icons[resource.icon]} />
+          </div>
+          <div class="resource-content">
+            <h3 class="resource-title">{resource.title}</h3>
+            <p class="resource-description">{resource.description}</p>
+          </div>
+          <div class="resource-arrow">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .resources {
+    position: relative;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .resource-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-slow);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .resource-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border-default);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient variants */
+  .resource-card.gradient-purple:hover {
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+  .resource-card.gradient-purple .resource-icon { color: #8b5cf6; }
+
+  .resource-card.gradient-blue:hover {
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  .resource-card.gradient-blue .resource-icon { color: #3b82f6; }
+
+  .resource-card.gradient-pink:hover {
+    box-shadow: 0 8px 30px rgba(217, 70, 239, 0.15);
+    border-color: rgba(217, 70, 239, 0.3);
+  }
+  .resource-card.gradient-pink .resource-icon { color: #d946ef; }
+
+  .resource-card.gradient-cyan:hover {
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.15);
+    border-color: rgba(6, 182, 212, 0.3);
+  }
+  .resource-card.gradient-cyan .resource-icon { color: #06b6d4; }
+
+  .resource-card.gradient-green:hover {
+    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+  .resource-card.gradient-green .resource-icon { color: #10b981; }
+
+  .resource-card.gradient-orange:hover {
+    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+  }
+  .resource-card.gradient-orange .resource-icon { color: #f59e0b; }
+
+  .resource-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+    transition: all var(--transition-base);
+  }
+
+  .resource-card:hover .resource-icon {
+    background: rgba(255, 255, 255, 0.06);
+    transform: scale(1.05);
+  }
+
+  .resource-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .resource-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .resource-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-snug);
+  }
+
+  .resource-arrow {
+    color: var(--color-text-muted);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all var(--transition-base);
+  }
+
+  .resource-card:hover .resource-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--color-text);
+  }
+
+  /* Animation delays */
+  .resource-card {
+    transition-delay: var(--delay);
+  }
+
+  @media (max-width: 900px) {
+    .resources-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .resources-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+      padding: var(--space-4);
+    }
+
+    .resource-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>

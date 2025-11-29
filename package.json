@@ -1,0 +1,22 @@
+{
+  "name": "asso-info-evry",
+  "version": "1.0.0",
+  "description": "Landing page for Association d'Informatique d'Evry",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && wrangler dev",
+    "deploy": "astro build && wrangler deploy"
+  },
+  "keywords": ["astro", "cloudflare", "workers", "landing-page"],
+  "author": "Association Info Evry",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^5.1.1",
+    "@astrojs/cloudflare": "^12.0.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.51.0"
+  }
+}

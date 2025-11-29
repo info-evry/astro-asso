@@ -1,0 +1,300 @@
+---
+
+---
+
+<section id="ndi" class="section ndi">
+  <div class="container">
+    <div class="ndi-wrapper">
+      <div class="ndi-content" data-animate>
+        <span class="section-label">Evenement annuel</span>
+        <h2 class="ndi-title">
+          La Nuit de l'Info
+        </h2>
+        <p class="ndi-description">
+          Une competition nationale de developpement web qui rassemble chaque annee
+          des milliers d'etudiants, enseignants et entreprises autour d'un defi commun.
+        </p>
+
+        <div class="ndi-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <span class="feature-title">16 heures</span>
+              <span class="feature-desc">Du coucher au lever du soleil</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <span class="feature-title">Equipes etudiantes</span>
+              <span class="feature-desc">Developpeurs, designers, marketeurs</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <span class="feature-title">Defis entreprises</span>
+              <span class="feature-desc">Challenges proposes par des partenaires</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <span class="feature-title">Premier jeudi de decembre</span>
+              <span class="feature-desc">Rendez-vous annuel national</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://ndi.info-evry.fr" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          S'inscrire a la Nuit de l'Info
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="ndi-visual" data-animate>
+        <div class="visual-card">
+          <div class="visual-glow"></div>
+          <div class="visual-content">
+            <div class="code-window">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-title">nuit-de-linfo.js</span>
+              </div>
+              <div class="code-body">
+                <pre><code><span class="code-keyword">const</span> <span class="code-var">ndi</span> = &#123;
+  <span class="code-prop">date</span>: <span class="code-string">"Premier jeudi de decembre"</span>,
+  <span class="code-prop">duree</span>: <span class="code-string">"16 heures"</span>,
+  <span class="code-prop">objectif</span>: <span class="code-string">"Creer une app web"</span>,
+  <span class="code-prop">ambiance</span>: <span class="code-string">"Pizza + Code + Fun"</span>
+&#125;;
+
+<span class="code-keyword">function</span> <span class="code-func">participer</span>() &#123;
+  <span class="code-keyword">return</span> <span class="code-string">"Une nuit inoubliable!"</span>;
+&#125;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ndi {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ndi::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .ndi-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+
+  .ndi-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .ndi-description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    line-height: var(--leading-relaxed);
+  }
+
+  .ndi-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .feature-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border-default);
+  }
+
+  .feature-icon {
+    color: var(--color-blue);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .feature-title {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  .feature-desc {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  /* Visual */
+  .ndi-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .visual-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .visual-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+  }
+
+  .visual-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .code-window {
+    background: var(--color-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .code-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .code-dot.red { background: #ff5f56; }
+  .code-dot.yellow { background: #ffbd2e; }
+  .code-dot.green { background: #27ca40; }
+
+  .code-title {
+    margin-left: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+  }
+
+  .code-body {
+    padding: var(--space-5);
+    overflow-x: auto;
+  }
+
+  .code-body pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+
+  .code-body code {
+    color: var(--color-text-secondary);
+  }
+
+  .code-keyword { color: #c678dd; }
+  .code-var { color: #e5c07b; }
+  .code-prop { color: #e06c75; }
+  .code-string { color: #98c379; }
+  .code-func { color: #61afef; }
+
+  @media (max-width: 900px) {
+    .ndi-wrapper {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+
+    .ndi-features {
+      grid-template-columns: 1fr;
+    }
+
+    .ndi-visual {
+      order: -1;
+    }
+
+    .visual-card {
+      max-width: 100%;
+    }
+  }
+</style>
