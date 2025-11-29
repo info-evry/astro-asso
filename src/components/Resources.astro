@@ -2,49 +2,43 @@
 const resources = [
   {
     title: 'ECAMPUS',
-    description: 'Plateforme officielle de cours et ressources pedagogiques',
+    description: 'Plateforme officielle de cours et ressources pédagogiques',
     href: 'https://ecampus.paris-saclay.fr',
-    icon: 'book',
-    gradient: 'purple'
+    icon: 'book'
   },
   {
     title: 'Drive',
-    description: 'Contenus partages, annales et ressources etudiantes',
+    description: 'Contenus partagés, annales et ressources étudiantes',
     href: 'https://info-evry.fr',
-    icon: 'folder',
-    gradient: 'blue'
+    icon: 'folder'
   },
   {
     title: 'Discord',
-    description: 'Serveur de communication et d\'entraide entre etudiants',
+    description: 'Serveur de communication et d\'entraide entre étudiants',
     href: 'https://info-evry.fr',
-    icon: 'chat',
-    gradient: 'pink'
+    icon: 'chat'
   },
   {
     title: 'Telegram',
-    description: 'Groupe de partage d\'informations et d\'actualites',
+    description: 'Groupe de partage d\'informations et d\'actualités',
     href: 'https://info-evry.fr',
-    icon: 'send',
-    gradient: 'cyan'
+    icon: 'send'
   },
   {
-    title: 'Info Evry',
-    description: 'Portail etudiant avec emploi du temps et outils',
+    title: 'Info Évry',
+    description: 'Portail étudiant avec emploi du temps et outils',
     href: 'https://info-evry.fr',
-    icon: 'globe',
-    gradient: 'green'
+    icon: 'globe'
   },
   {
     title: 'Contact',
-    description: 'Contacter les representants de l\'association',
-    href: '#contact',
-    icon: 'mail',
-    gradient: 'orange'
+    description: 'Contacter les représentants de l\'association',
+    href: 'mailto:contact@info-evry.fr',
+    icon: 'mail'
   }
 ];
 
-const icons = {
+const icons: Record<string, string> = {
   book: `<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
   folder: `<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
   chat: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`,
@@ -54,26 +48,24 @@ const icons = {
 };
 ---
 
-<section id="resources" class="section resources">
+<section id="ressources" class="section resources">
   <div class="container">
-    <div class="section-header" data-animate>
+    <header class="section-header">
       <span class="section-label">Ressources</span>
       <h2 class="section-title">Tout ce dont vous avez besoin</h2>
       <p class="section-description">
-        Acces rapide a toutes les plateformes et outils essentiels
+        Accès rapide à toutes les plateformes et outils essentiels
         pour votre parcours en informatique.
       </p>
-    </div>
+    </header>
 
     <div class="resources-grid">
-      {resources.map((resource, index) => (
+      {resources.map((resource) => (
         <a
           href={resource.href}
           target={resource.href.startsWith('http') ? '_blank' : undefined}
           rel={resource.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          class={`resource-card gradient-${resource.gradient}`}
-          data-animate
-          style={`--delay: ${(index + 1) * 100}ms`}
+          class="resource-card"
         >
           <div class="resource-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" set:html={icons[resource.icon]} />
@@ -119,46 +111,10 @@ const icons = {
 
   .resource-card:hover {
     background: rgba(255, 255, 255, 0.04);
-    border-color: var(--border-default);
+    border-color: rgba(14, 165, 233, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.15);
   }
-
-  /* Gradient variants */
-  .resource-card.gradient-purple:hover {
-    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.3);
-  }
-  .resource-card.gradient-purple .resource-icon { color: #8b5cf6; }
-
-  .resource-card.gradient-blue:hover {
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.3);
-  }
-  .resource-card.gradient-blue .resource-icon { color: #3b82f6; }
-
-  .resource-card.gradient-pink:hover {
-    box-shadow: 0 8px 30px rgba(217, 70, 239, 0.15);
-    border-color: rgba(217, 70, 239, 0.3);
-  }
-  .resource-card.gradient-pink .resource-icon { color: #d946ef; }
-
-  .resource-card.gradient-cyan:hover {
-    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.3);
-  }
-  .resource-card.gradient-cyan .resource-icon { color: #06b6d4; }
-
-  .resource-card.gradient-green:hover {
-    box-shadow: 0 8px 30px rgba(16, 185, 129, 0.15);
-    border-color: rgba(16, 185, 129, 0.3);
-  }
-  .resource-card.gradient-green .resource-icon { color: #10b981; }
-
-  .resource-card.gradient-orange:hover {
-    box-shadow: 0 8px 30px rgba(245, 158, 11, 0.15);
-    border-color: rgba(245, 158, 11, 0.3);
-  }
-  .resource-card.gradient-orange .resource-icon { color: #f59e0b; }
 
   .resource-icon {
     width: 48px;
@@ -166,14 +122,15 @@ const icons = {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(14, 165, 233, 0.1);
     border-radius: var(--radius-md);
     flex-shrink: 0;
     transition: all var(--transition-base);
+    color: var(--color-primary);
   }
 
   .resource-card:hover .resource-icon {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(14, 165, 233, 0.15);
     transform: scale(1.05);
   }
 
@@ -205,12 +162,7 @@ const icons = {
   .resource-card:hover .resource-arrow {
     opacity: 1;
     transform: translateX(0);
-    color: var(--color-text);
-  }
-
-  /* Animation delays */
-  .resource-card {
-    transition-delay: var(--delay);
+    color: var(--color-primary);
   }
 
   @media (max-width: 900px) {

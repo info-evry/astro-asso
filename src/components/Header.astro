@@ -1,7 +1,7 @@
 ---
 const navLinks = [
-  { href: '#about', label: 'A propos' },
-  { href: '#resources', label: 'Ressources' },
+  { href: '#a-propos', label: 'À propos' },
+  { href: '#ressources', label: 'Ressources' },
   { href: '#ndi', label: 'Nuit de l\'Info' },
 ];
 ---
@@ -10,68 +10,35 @@ const navLinks = [
   <div class="header-container container">
     <a href="/" class="logo">
       <span class="logo-text">Info</span>
-      <span class="logo-accent">Evry</span>
+      <span class="logo-accent">Évry</span>
     </a>
 
-    <nav class="nav" id="nav">
+    <nav class="nav">
       {navLinks.map(link => (
         <a href={link.href} class="nav-link">{link.label}</a>
       ))}
     </nav>
 
     <div class="header-actions">
-      <a href="#membership" class="btn btn-primary btn-header">Rejoindre</a>
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
-        <span class="hamburger"></span>
-      </button>
+      <a href="#adhesion" class="btn btn-primary btn-header">Adhérer</a>
+    </div>
+
+    <!-- CSS-only mobile menu -->
+    <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-checkbox" aria-label="Menu" />
+    <label for="mobile-menu-toggle" class="mobile-menu-btn">
+      <span class="hamburger"></span>
+    </label>
+
+    <div class="mobile-nav">
+      <nav class="mobile-nav-links">
+        {navLinks.map(link => (
+          <a href={link.href} class="mobile-nav-link">{link.label}</a>
+        ))}
+        <a href="#adhesion" class="btn btn-primary mobile-cta">Adhérer à l'association</a>
+      </nav>
     </div>
   </div>
-
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav" id="mobile-nav">
-    <nav class="mobile-nav-links">
-      {navLinks.map(link => (
-        <a href={link.href} class="mobile-nav-link">{link.label}</a>
-      ))}
-      <a href="#membership" class="btn btn-primary mobile-cta">Rejoindre l'association</a>
-    </nav>
-  </div>
 </header>
-
-<script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileNav = document.getElementById('mobile-nav');
-  const header = document.querySelector('.header');
-
-  mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    mobileNav?.classList.toggle('open');
-    document.body.style.overflow = mobileNav?.classList.contains('open') ? 'hidden' : '';
-  });
-
-  // Close mobile nav on link click
-  document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenuBtn?.classList.remove('active');
-      mobileNav?.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Header scroll effect
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 50) {
-      header?.classList.add('scrolled');
-    } else {
-      header?.classList.remove('scrolled');
-    }
-
-    lastScroll = currentScroll;
-  });
-</script>
 
 <style>
   .header {
@@ -81,10 +48,6 @@ const navLinks = [
     right: 0;
     z-index: var(--z-sticky);
     padding: var(--space-4) 0;
-    transition: all var(--transition-base);
-  }
-
-  .header.scrolled {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -106,6 +69,7 @@ const navLinks = [
     font-size: var(--text-xl);
     font-weight: 700;
     letter-spacing: var(--tracking-tight);
+    z-index: calc(var(--z-sticky) + 2);
   }
 
   .logo-text {
@@ -165,16 +129,20 @@ const navLinks = [
     font-size: var(--text-sm);
   }
 
-  /* Mobile Menu Button */
+  /* Mobile Menu - CSS Only */
+  .mobile-menu-checkbox {
+    display: none;
+  }
+
   .mobile-menu-btn {
     display: none;
     width: 40px;
     height: 40px;
-    background: transparent;
-    border: none;
     cursor: pointer;
     position: relative;
-    z-index: calc(var(--z-sticky) + 1);
+    z-index: calc(var(--z-sticky) + 2);
+    align-items: center;
+    justify-content: center;
   }
 
   .hamburger,
@@ -207,20 +175,6 @@ const navLinks = [
     top: 7px;
   }
 
-  .mobile-menu-btn.active .hamburger {
-    background: transparent;
-  }
-
-  .mobile-menu-btn.active .hamburger::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-
-  .mobile-menu-btn.active .hamburger::after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
-
   /* Mobile Navigation */
   .mobile-nav {
     position: fixed;
@@ -228,21 +182,16 @@ const navLinks = [
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    z-index: var(--z-sticky);
+    z-index: calc(var(--z-sticky) + 1);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-slow);
-  }
-
-  .mobile-nav.open {
-    opacity: 1;
-    visibility: visible;
   }
 
   .mobile-nav-links {
@@ -261,15 +210,6 @@ const navLinks = [
     transition: all var(--transition-base);
   }
 
-  .mobile-nav.open .mobile-nav-link {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mobile-nav.open .mobile-nav-link:nth-child(1) { transition-delay: 100ms; }
-  .mobile-nav.open .mobile-nav-link:nth-child(2) { transition-delay: 150ms; }
-  .mobile-nav.open .mobile-nav-link:nth-child(3) { transition-delay: 200ms; }
-
   .mobile-cta {
     margin-top: var(--space-4);
     opacity: 0;
@@ -277,11 +217,36 @@ const navLinks = [
     transition: all var(--transition-base);
   }
 
-  .mobile-nav.open .mobile-cta {
+  /* Checked state - Menu open */
+  .mobile-menu-checkbox:checked ~ .mobile-menu-btn .hamburger {
+    background: transparent;
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-btn .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-menu-btn .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-nav-link,
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-cta {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 250ms;
   }
+
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-nav-link:nth-child(1) { transition-delay: 100ms; }
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-nav-link:nth-child(2) { transition-delay: 150ms; }
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-nav-link:nth-child(3) { transition-delay: 200ms; }
+  .mobile-menu-checkbox:checked ~ .mobile-nav .mobile-cta { transition-delay: 250ms; }
 
   /* Responsive */
   @media (max-width: 768px) {
@@ -289,14 +254,12 @@ const navLinks = [
       display: none;
     }
 
-    .btn-header {
+    .header-actions {
       display: none;
     }
 
     .mobile-menu-btn {
       display: flex;
-      align-items: center;
-      justify-content: center;
     }
   }
 </style>

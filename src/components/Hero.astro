@@ -3,65 +3,38 @@
 ---
 
 <section class="hero">
-  <!-- Animated Background Orbs -->
+  <!-- Animated Background Orbs (CSS only) -->
   <div class="hero-bg">
-    <div class="orb orb-purple"></div>
     <div class="orb orb-blue"></div>
-    <div class="orb orb-pink"></div>
+    <div class="orb orb-cyan"></div>
+    <div class="orb orb-indigo"></div>
     <div class="grid-overlay"></div>
   </div>
 
   <div class="hero-content container">
-    <div class="hero-badge">
+    <p class="hero-badge">
       <span class="badge-dot"></span>
-      <span>Association Etudiante</span>
-    </div>
+      <span>Depuis 1993</span>
+    </p>
 
     <h1 class="hero-title">
       <span class="title-line">Association</span>
       <span class="title-line gradient-text">d'Informatique</span>
-      <span class="title-line">d'Evry</span>
+      <span class="title-line">d'Évry</span>
     </h1>
 
     <p class="hero-description">
-      La communaute des etudiants en informatique de l'Universite d'Evry.
-      Ressources, evenements, et entraide pour reussir ensemble.
+      La communauté des étudiants en informatique de l'Université d'Évry Paris-Saclay.
+      Ressources, entraide et événements pour réussir ensemble.
     </p>
 
     <div class="hero-actions">
-      <a href="#membership" class="btn btn-primary btn-lg">
-        Rejoindre l'association
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      <a href="#adhesion" class="btn btn-primary btn-lg">
+        Devenir membre
       </a>
-      <a href="#about" class="btn btn-secondary btn-lg">
-        Decouvrir
+      <a href="#a-propos" class="btn btn-secondary btn-lg">
+        En savoir plus
       </a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-value">500+</span>
-        <span class="stat-label">Etudiants</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">10+</span>
-        <span class="stat-label">Evenements/an</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-value">5</span>
-        <span class="stat-label">Annees</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-mouse">
-      <div class="scroll-wheel"></div>
     </div>
   </div>
 </section>
@@ -89,34 +62,33 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(100px);
-    opacity: 0.6;
+    opacity: 0.5;
     animation: float 25s ease-in-out infinite;
-  }
-
-  .orb-purple {
-    width: 600px;
-    height: 600px;
-    background: rgba(139, 92, 246, 0.4);
-    top: -200px;
-    right: -100px;
   }
 
   .orb-blue {
     width: 500px;
     height: 500px;
-    background: rgba(59, 130, 246, 0.35);
-    bottom: -150px;
-    left: -100px;
+    background: rgba(14, 165, 233, 0.5);
+    top: -150px;
+    right: -50px;
+  }
+
+  .orb-cyan {
+    width: 400px;
+    height: 400px;
+    background: rgba(34, 211, 238, 0.4);
+    bottom: -100px;
+    left: -50px;
     animation-delay: -8s;
   }
 
-  .orb-pink {
-    width: 400px;
-    height: 400px;
-    background: rgba(217, 70, 239, 0.3);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .orb-indigo {
+    width: 300px;
+    height: 300px;
+    background: rgba(99, 102, 241, 0.35);
+    top: 40%;
+    left: 30%;
     animation-delay: -15s;
   }
 
@@ -147,12 +119,12 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-4);
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.2);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--color-purple);
+    color: var(--color-primary);
     margin-bottom: var(--space-8);
     animation: fadeInUp 0.6s ease forwards;
   }
@@ -160,7 +132,7 @@
   .badge-dot {
     width: 8px;
     height: 8px;
-    background: var(--color-purple);
+    background: var(--color-primary);
     border-radius: 50%;
     animation: pulse 2s ease-in-out infinite;
   }
@@ -200,90 +172,8 @@
     gap: var(--space-4);
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: var(--space-16);
     opacity: 0;
     animation: fadeInUp 0.6s ease 500ms forwards;
-  }
-
-  /* Stats */
-  .hero-stats {
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
-    padding: var(--space-6) var(--space-8);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    opacity: 0;
-    animation: fadeInUp 0.6s ease 600ms forwards;
-  }
-
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-1);
-  }
-
-  .stat-value {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .stat-label {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-  }
-
-  .stat-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--border-default);
-  }
-
-  /* Scroll Indicator */
-  .scroll-indicator {
-    position: absolute;
-    bottom: var(--space-8);
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: fadeIn 0.6s ease 1s forwards;
-  }
-
-  .scroll-mouse {
-    width: 24px;
-    height: 38px;
-    border: 2px solid var(--border-default);
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    padding-top: 6px;
-  }
-
-  .scroll-wheel {
-    width: 3px;
-    height: 8px;
-    background: var(--color-text-muted);
-    border-radius: 2px;
-    animation: scrollWheel 2s ease-in-out infinite;
-  }
-
-  @keyframes scrollWheel {
-    0%, 100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(6px);
-    }
   }
 
   /* Responsive */
@@ -314,34 +204,19 @@
       justify-content: center;
     }
 
-    .hero-stats {
-      flex-direction: column;
-      gap: var(--space-4);
-      padding: var(--space-5);
-    }
-
-    .stat-divider {
-      width: 60px;
-      height: 1px;
-    }
-
-    .scroll-indicator {
-      display: none;
-    }
-
-    .orb-purple {
-      width: 300px;
-      height: 300px;
-    }
-
     .orb-blue {
       width: 250px;
       height: 250px;
     }
 
-    .orb-pink {
+    .orb-cyan {
       width: 200px;
       height: 200px;
+    }
+
+    .orb-indigo {
+      width: 150px;
+      height: 150px;
     }
   }
 </style>

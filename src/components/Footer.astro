@@ -11,16 +11,11 @@ const socialLinks = [
     name: 'Discord',
     href: 'https://info-evry.fr',
     icon: `<path d="M9 12h.01M15 12h.01M10 16s1.5 1 2 1 2-1 2-1M20.84 4.61a19.57 19.57 0 0 0-4.5-1.39.07.07 0 0 0-.08.03c-.2.35-.42.81-.58 1.17a18.2 18.2 0 0 0-5.36 0c-.16-.36-.38-.82-.58-1.17a.08.08 0 0 0-.08-.03 19.5 19.5 0 0 0-4.5 1.39.07.07 0 0 0-.03.02C2.43 8.62 1.73 12.5 2.07 16.35a.08.08 0 0 0 .03.05c1.82 1.34 3.59 2.15 5.32 2.69a.08.08 0 0 0 .09-.03c.41-.56.78-1.16 1.09-1.78a.08.08 0 0 0-.04-.11 12.9 12.9 0 0 1-1.83-.87.08.08 0 0 1 0-.13c.12-.09.25-.18.37-.28a.08.08 0 0 1 .08-.01c3.85 1.76 8.02 1.76 11.83 0a.08.08 0 0 1 .08.01c.12.1.25.19.37.28a.08.08 0 0 1 0 .13c-.58.34-1.19.63-1.83.87a.08.08 0 0 0-.04.11c.32.62.69 1.22 1.09 1.78a.08.08 0 0 0 .09.03c1.74-.54 3.5-1.35 5.32-2.69a.08.08 0 0 0 .03-.05c.4-4.17-.68-7.79-2.89-10.98a.07.07 0 0 0-.03-.03z" stroke="currentColor" stroke-width="1.5" fill="none"/>`
-  },
-  {
-    name: 'GitHub',
-    href: 'https://github.com',
-    icon: `<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`
   }
 ];
 
 const footerLinks = [
-  { label: 'Info Evry', href: 'https://info-evry.fr' },
+  { label: 'Info Évry', href: 'https://info-evry.fr' },
   { label: 'ECAMPUS', href: 'https://ecampus.paris-saclay.fr' },
   { label: 'Contact', href: 'mailto:contact@info-evry.fr' }
 ];
@@ -32,11 +27,11 @@ const footerLinks = [
       <div class="footer-brand">
         <a href="/" class="footer-logo">
           <span class="logo-text">Info</span>
-          <span class="logo-accent">Evry</span>
+          <span class="logo-accent">Évry</span>
         </a>
         <p class="footer-tagline">
-          Association des Etudiants en Informatique<br/>
-          Universite d'Evry Paris-Saclay
+          Association des Étudiants en Informatique<br/>
+          Université d'Évry Paris-Saclay
         </p>
       </div>
 
@@ -52,7 +47,7 @@ const footerLinks = [
       </div>
 
       <div class="footer-social">
-        <h4 class="footer-heading">Suivez-nous</h4>
+        <h4 class="footer-heading">Réseaux</h4>
         <div class="social-links">
           {socialLinks.map(social => (
             <a
@@ -71,10 +66,7 @@ const footerLinks = [
 
     <div class="footer-bottom">
       <p class="copyright">
-        © {currentYear} Association Info Evry. Tous droits reserves.
-      </p>
-      <p class="credits">
-        Fait avec <span class="heart">♥</span> par les etudiants
+        © {currentYear} Association Info Évry. Tous droits réservés.
       </p>
     </div>
   </div>
@@ -165,28 +157,23 @@ const footerLinks = [
   }
 
   .social-link:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--border-default);
-    color: var(--color-text);
+    background: rgba(14, 165, 233, 0.1);
+    border-color: rgba(14, 165, 233, 0.3);
+    color: var(--color-primary);
     transform: translateY(-2px);
   }
 
   .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: var(--space-8);
     border-top: 1px solid var(--border-subtle);
   }
 
-  .copyright,
-  .credits {
+  .copyright {
     font-size: var(--text-sm);
     color: var(--color-text-muted);
-  }
-
-  .heart {
-    color: #ef4444;
   }
 
   @media (max-width: 768px) {

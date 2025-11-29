@@ -5,14 +5,12 @@
 <section id="ndi" class="section ndi">
   <div class="container">
     <div class="ndi-wrapper">
-      <div class="ndi-content" data-animate>
-        <span class="section-label">Evenement annuel</span>
-        <h2 class="ndi-title">
-          La Nuit de l'Info
-        </h2>
+      <div class="ndi-content">
+        <span class="section-label">Événement annuel</span>
+        <h2 class="ndi-title">La Nuit de l'Info</h2>
         <p class="ndi-description">
-          Une competition nationale de developpement web qui rassemble chaque annee
-          des milliers d'etudiants, enseignants et entreprises autour d'un defi commun.
+          Une compétition nationale de développement web qui rassemble chaque année
+          des étudiants, enseignants et entreprises autour d'un défi commun.
         </p>
 
         <div class="ndi-features">
@@ -39,8 +37,8 @@
               </svg>
             </div>
             <div class="feature-text">
-              <span class="feature-title">Equipes etudiantes</span>
-              <span class="feature-desc">Developpeurs, designers, marketeurs</span>
+              <span class="feature-title">Équipes pluridisciplinaires</span>
+              <span class="feature-desc">Développeurs, designers, marketeurs</span>
             </div>
           </div>
 
@@ -51,8 +49,8 @@
               </svg>
             </div>
             <div class="feature-text">
-              <span class="feature-title">Defis entreprises</span>
-              <span class="feature-desc">Challenges proposes par des partenaires</span>
+              <span class="feature-title">Défis entreprises</span>
+              <span class="feature-desc">Challenges proposés par des partenaires</span>
             </div>
           </div>
 
@@ -66,21 +64,18 @@
               </svg>
             </div>
             <div class="feature-text">
-              <span class="feature-title">Premier jeudi de decembre</span>
+              <span class="feature-title">Premier jeudi de décembre</span>
               <span class="feature-desc">Rendez-vous annuel national</span>
             </div>
           </div>
         </div>
 
         <a href="https://ndi.info-evry.fr" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          S'inscrire a la Nuit de l'Info
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          Inscription Nuit de l'Info
         </a>
       </div>
 
-      <div class="ndi-visual" data-animate>
+      <div class="ndi-visual">
         <div class="visual-card">
           <div class="visual-glow"></div>
           <div class="visual-content">
@@ -93,14 +88,14 @@
               </div>
               <div class="code-body">
                 <pre><code><span class="code-keyword">const</span> <span class="code-var">ndi</span> = &#123;
-  <span class="code-prop">date</span>: <span class="code-string">"Premier jeudi de decembre"</span>,
-  <span class="code-prop">duree</span>: <span class="code-string">"16 heures"</span>,
-  <span class="code-prop">objectif</span>: <span class="code-string">"Creer une app web"</span>,
+  <span class="code-prop">date</span>: <span class="code-string">"Premier jeudi de décembre"</span>,
+  <span class="code-prop">durée</span>: <span class="code-string">"16 heures"</span>,
+  <span class="code-prop">objectif</span>: <span class="code-string">"Créer une app web"</span>,
   <span class="code-prop">ambiance</span>: <span class="code-string">"Pizza + Code + Fun"</span>
 &#125;;
 
 <span class="code-keyword">function</span> <span class="code-func">participer</span>() &#123;
-  <span class="code-keyword">return</span> <span class="code-string">"Une nuit inoubliable!"</span>;
+  <span class="code-keyword">return</span> <span class="code-string">"Une nuit mémorable !"</span>;
 &#125;</code></pre>
               </div>
             </div>
@@ -124,7 +119,7 @@
     right: 0;
     width: 50%;
     height: 100%;
-    background: radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle at 70% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -138,7 +133,7 @@
   .ndi-title {
     font-size: var(--text-4xl);
     margin-bottom: var(--space-4);
-    background: var(--gradient-blue);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -175,7 +170,7 @@
   }
 
   .feature-icon {
-    color: var(--color-blue);
+    color: var(--color-primary);
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -213,7 +208,7 @@
   .visual-glow {
     position: absolute;
     inset: -20px;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
     filter: blur(40px);
     z-index: 0;
   }

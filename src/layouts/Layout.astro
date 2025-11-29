@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title,
-  description = "Association des Etudiants en Informatique de l'Université d'Evry - Rejoignez la communauté des étudiants en informatique"
+  description = "Association des Étudiants en Informatique de l'Université d'Évry Paris-Saclay - Depuis 1993"
 } = Astro.props;
 ---
 
@@ -34,27 +34,6 @@ const {
 </head>
 <body>
   <slot />
-
-  <script>
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
 
