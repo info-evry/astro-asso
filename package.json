@@ -20,9 +20,9 @@
     "@astrojs/cloudflare": "^12.6.12"
   },
   "devDependencies": {
-    "wrangler": "^4.51.0",
-    "vitest": "^4.0.14",
     "@astrojs/check": "^0.9.6",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "2.1.9",
+    "wrangler": "^4.51.0"
   }
 }
