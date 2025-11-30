@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro build && wrangler dev",
-    "deploy": "astro build && wrangler deploy",
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "astro check"
