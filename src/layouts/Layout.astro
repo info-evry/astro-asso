@@ -19,11 +19,12 @@ interface Props {
 const {
   title,
   description = "Association des Étudiants en Informatique de l'Université d'Évry Val-d'Essonne",
-  image = "/og.png",
+  image = "og.png",
   noindex = false
 } = Astro.props;
 
-const siteUrl = associationInfo.sites.asso.url;
+// Ensure siteUrl has trailing slash for relative URL resolution
+const siteUrl = associationInfo.sites.asso.url.replace(/\/?$/, '/');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = new URL(image, siteUrl).href;
 ---
