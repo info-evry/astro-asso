@@ -2,34 +2,51 @@
 
 Official website for Asso Info Evry, the student association for Computer Science at Université d'Évry Val-d'Essonne.
 
+**Live site**: https://asso.info-evry.fr
+
 ## Features
 
-- Modern glassmorphism design
-- Responsive mobile-first layout
-- Association information and resources
-- NDI event promotion
-- Membership section
+- Modern glassmorphism dark theme design
+- Responsive mobile-first layout with floating tab bar
+- Association information and mission
+- Resource links (Discord, Telegram, GitHub, Drive)
+- Nuit de l'Info event promotion
+- Membership section with benefits
+- SF Symbols icons throughout
 
 ## Tech Stack
 
-- **Frontend**: Astro 5.x with static site generation
+- **Framework**: Astro 5.x (static site generation)
 - **Hosting**: Cloudflare Pages
 - **Design**: Shared design system via git submodule
 - **Content**: Shared knowledge base via git submodule
+- **Styling**: CSS with custom properties (design tokens)
 
 ## Project Structure
 
 ```
-asso/
+astro-asso/
 ├── src/
-│   ├── pages/           # Astro pages
-│   ├── components/      # Reusable components
-│   ├── layouts/         # Page layouts
-│   └── styles/          # Additional styles
-├── design/              # Shared design system (submodule)
-├── knowledge/           # Shared content (submodule)
-├── public/              # Static assets
-└── docs/                # Documentation
+│   ├── pages/
+│   │   └── index.astro       # Main landing page
+│   ├── components/
+│   │   ├── Header.astro      # Site header (wraps design system)
+│   │   ├── Footer.astro      # Site footer (wraps design system)
+│   │   ├── Hero.astro        # Hero section with CTA
+│   │   ├── About.astro       # About the association
+│   │   ├── Resources.astro   # Links and resources
+│   │   ├── NuitInfo.astro    # NDI event promotion
+│   │   └── Membership.astro  # Join the association
+│   └── layouts/
+│       └── Layout.astro      # Base layout with MobileNav
+├── design/                   # Shared design system (submodule)
+├── knowledge/                # Shared content (submodule)
+├── public/
+│   ├── fonts/               # SF Symbols font
+│   ├── favicon.svg          # Site favicon
+│   └── robots.txt           # SEO robots file
+└── docs/
+    └── setup.md             # Setup guide
 ```
 
 ## Quick Start
@@ -37,13 +54,13 @@ asso/
 ### Prerequisites
 
 - [Bun](https://bun.sh/) (v1.0+)
-- Cloudflare account (for Pages deployment)
+- Cloudflare account (for deployment)
 
 ### Installation
 
 ```bash
 # Clone with submodules
-git clone --recursive git@github.com:info-evry/astro-asso.git
+git clone --recursive https://github.com/info-evry/astro-asso.git
 cd astro-asso
 
 # Or init submodules if already cloned
@@ -61,26 +78,65 @@ bun run dev
 
 Visit `http://localhost:4321`
 
-### Build & Deploy
+### Build
 
 ```bash
-# Build and deploy to Cloudflare Pages
-bun run deploy
-
-# Or use the deploy script
-./deploy.sh
+bun run build
 ```
 
-## Documentation
+### Deploy
 
-- [Setup Guide](./docs/setup.md) - Initial setup
-- [Deployment Guide](./docs/deploy.md) - Deployment instructions
+Deployment is handled via the [astro-maestro](https://github.com/info-evry/astro-maestro) orchestrator or Cloudflare Pages CI.
+
+```bash
+# Preview build locally
+bun run preview
+```
+
+## Page Sections
+
+| Section | Anchor | Description |
+|---------|--------|-------------|
+| Hero | - | Main hero with association tagline |
+| À propos | `#a-propos` | About the association |
+| Ressources | `#ressources` | Links to Discord, Telegram, Drive |
+| Nuit de l'Info | `#ndi` | NDI event promotion |
+| Rejoindre | `#rejoindre` | Membership benefits and CTA |
+
+## Mobile Navigation
+
+The site uses a floating tab bar on mobile (via `MobileNav` from the design system):
+
+- À propos → `#a-propos`
+- Ressources → `#ressources`
+- NDI → `#ndi`
+- Rejoindre (CTA) → `/adhesion`
+
+## Updating Submodules
+
+When the design system or knowledge base is updated:
+
+```bash
+# Update both submodules to latest
+git submodule update --remote
+
+# Or update individually
+git submodule update --remote design
+git submodule update --remote knowledge
+
+# Commit the update
+git add design knowledge
+git commit -m "Update submodules"
+git push
+```
 
 ## Related Repositories
 
 - [astro-design](https://github.com/info-evry/astro-design) - Shared design system
 - [astro-knowledge](https://github.com/info-evry/astro-knowledge) - Shared content
 - [astro-ndi](https://github.com/info-evry/astro-ndi) - NDI registration platform
+- [astro-join](https://github.com/info-evry/astro-join) - Membership portal
+- [astro-maestro](https://github.com/info-evry/astro-maestro) - Deployment orchestrator (private)
 
 ## License
 
