@@ -1,5 +1,13 @@
 ---
+import '../../design/src/index.css';
+import MobileNav from '../../design/src/components/MobileNav.astro';
 import associationInfo from '../../knowledge/src/association/info.json';
+
+const mobileNavItems = [
+  { href: '/', label: 'Accueil', icon: 'house' },
+  { href: '#a-propos', label: 'À propos', icon: 'info.circle' },
+  { href: '#ressources', label: 'Ressources', icon: 'book' },
+];
 
 interface Props {
   title: string;
@@ -72,6 +80,13 @@ const ogImageUrl = new URL(image, siteUrl).href;
 </head>
 <body>
   <slot />
+
+  <MobileNav
+    items={mobileNavItems}
+    ctaHref="/adhesion"
+    ctaLabel="Rejoindre"
+    ctaIcon="person.badge.plus"
+  />
 </body>
 </html>
 
