@@ -86,7 +86,7 @@ bun run build
 
 ### Deploy
 
-Deployment is handled via the [astro-maestro](https://github.com/info-evry/astro-maestro) orchestrator or Cloudflare Pages CI.
+Deployment is handled via Cloudflare Pages CI.
 
 ```bash
 # Preview build locally
@@ -136,8 +136,7 @@ git push
 - [astro-knowledge](https://github.com/info-evry/astro-knowledge) - Shared content
 - [astro-ndi](https://github.com/info-evry/astro-ndi) - NDI registration platform
 - [astro-join](https://github.com/info-evry/astro-join) - Membership portal
-- [astro-maestro](https://github.com/info-evry/astro-maestro) - Deployment orchestrator (private)
 
 ## License
 
-MIT - Asso Info Evry
+AGPL-3.0 - Asso Info Evry
