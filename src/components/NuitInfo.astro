@@ -1,5 +1,6 @@
 ---
 import ndiEvent from '../../knowledge/src/ndi/event.json';
+import SFSymbol from '../../design/src/components/SFSymbol.astro';
 ---
 
 <section id="ndi" class="section ndi">
@@ -15,10 +16,7 @@ import ndiEvent from '../../knowledge/src/ndi/event.json';
         <div class="ndi-features">
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <SFSymbol name="clock.fill" size="lg" />
             </div>
             <div class="feature-text">
               <span class="feature-title">Durée : {ndiEvent.dates.duration}</span>
@@ -28,12 +26,7 @@ import ndiEvent from '../../knowledge/src/ndi/event.json';
 
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <SFSymbol name="person.2.fill" size="lg" />
             </div>
             <div class="feature-text">
               <span class="feature-title">Équipes pluridisciplinaires</span>
@@ -43,9 +36,7 @@ import ndiEvent from '../../knowledge/src/ndi/event.json';
 
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+              <SFSymbol name="star.fill" size="lg" />
             </div>
             <div class="feature-text">
               <span class="feature-title">Défis entreprises</span>
@@ -55,12 +46,7 @@ import ndiEvent from '../../knowledge/src/ndi/event.json';
 
           <div class="feature-item">
             <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
-              </svg>
+              <SFSymbol name="calendar" size="lg" />
             </div>
             <div class="feature-text">
               <span class="feature-title">Premier jeudi de décembre</span>
