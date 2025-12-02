@@ -1,4 +1,6 @@
 ---
+import SectionHeader from '../../design/src/components/SectionHeader.astro';
+
 const resources = [
   {
     title: 'ECAMPUS',
@@ -50,14 +52,11 @@ const icons: Record<string, string> = {
 
 <section id="ressources" class="section resources">
   <div class="container">
-    <header class="section-header">
-      <span class="section-label">Ressources</span>
-      <h2 class="section-title">Tout ce dont vous avez besoin</h2>
-      <p class="section-description">
-        Accès rapide à toutes les plateformes et outils essentiels
-        pour votre parcours en informatique.
-      </p>
-    </header>
+    <SectionHeader
+      label="Ressources"
+      title="Tout ce dont vous avez besoin"
+      description="Accès rapide à toutes les plateformes et outils essentiels pour votre parcours en informatique."
+    />
 
     <div class="resources-grid">
       {resources.map((resource) => (
@@ -111,9 +110,9 @@ const icons: Record<string, string> = {
 
   .resource-card:hover {
     background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(14, 165, 233, 0.3);
+    border-color: rgba(0, 27, 165, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 27, 165, 0.15);
   }
 
   .resource-icon {
@@ -122,7 +121,7 @@ const icons: Record<string, string> = {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(0, 27, 165, 0.1);
     border-radius: var(--radius-md);
     flex-shrink: 0;
     transition: all var(--transition-base);
@@ -130,7 +129,7 @@ const icons: Record<string, string> = {
   }
 
   .resource-card:hover .resource-icon {
-    background: rgba(14, 165, 233, 0.15);
+    background: rgba(0, 27, 165, 0.15);
     transform: scale(1.05);
   }
 

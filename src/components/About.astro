@@ -1,17 +1,14 @@
 ---
-
+import SectionHeader from '../../design/src/components/SectionHeader.astro';
 ---
 
 <section id="a-propos" class="section about">
   <div class="container">
-    <header class="section-header">
-      <span class="section-label">À propos</span>
-      <h2 class="section-title">Qui sommes-nous ?</h2>
-      <p class="section-description">
-        L'Association des Étudiants en Informatique de l'Université d'Évry
-        rassemble et accompagne les étudiants tout au long de leur parcours depuis 1993.
-      </p>
-    </header>
+    <SectionHeader
+      label="À propos"
+      title="Qui sommes-nous ?"
+      description="L'Association des Étudiants en Informatique de l'Université d'Évry rassemble et accompagne les étudiants tout au long de leur parcours depuis 1993."
+    />
 
     <div class="about-grid">
       <article class="about-card glass-card">
@@ -75,7 +72,7 @@
     transform: translate(-50%, -50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 27, 165, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -98,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(0, 27, 165, 0.1);
     border-radius: var(--radius-md);
     color: var(--color-primary);
   }

@@ -1,21 +1,13 @@
 ---
-
+import HeroBackground from '../../design/src/components/HeroBackground.astro';
+import Badge from '../../design/src/components/Badge.astro';
 ---
 
 <section class="hero">
-  <!-- Animated Background Orbs (CSS only) -->
-  <div class="hero-bg">
-    <div class="orb orb-blue"></div>
-    <div class="orb orb-cyan"></div>
-    <div class="orb orb-indigo"></div>
-    <div class="grid-overlay"></div>
-  </div>
+  <HeroBackground />
 
   <div class="hero-content container">
-    <p class="hero-badge">
-      <span class="badge-dot"></span>
-      <span>Depuis 1993</span>
-    </p>
+    <Badge text="Depuis 1993" variant="hero" showDot animated />
 
     <h1 class="hero-title">
       <span class="title-line">Association</span>
@@ -50,59 +42,6 @@
     padding-top: 80px;
   }
 
-  /* Background */
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    animation: float 25s ease-in-out infinite;
-  }
-
-  .orb-blue {
-    width: 500px;
-    height: 500px;
-    background: rgba(14, 165, 233, 0.5);
-    top: -150px;
-    right: -50px;
-  }
-
-  .orb-cyan {
-    width: 400px;
-    height: 400px;
-    background: rgba(34, 211, 238, 0.4);
-    bottom: -100px;
-    left: -50px;
-    animation-delay: -8s;
-  }
-
-  .orb-indigo {
-    width: 300px;
-    height: 300px;
-    background: rgba(99, 102, 241, 0.35);
-    top: 40%;
-    left: 30%;
-    animation-delay: -15s;
-  }
-
-  .grid-overlay {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-  }
-
   /* Content */
   .hero-content {
     position: relative;
@@ -111,30 +50,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  /* Badge */
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-4);
-    background: rgba(14, 165, 233, 0.1);
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--color-primary);
-    margin-bottom: var(--space-8);
-    animation: fadeInUp 0.6s ease forwards;
-  }
-
-  .badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-primary);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
   }
 
   /* Title */
@@ -184,10 +99,6 @@
       padding-bottom: var(--space-16);
     }
 
-    .hero-badge {
-      margin-bottom: var(--space-6);
-    }
-
     .hero-description {
       font-size: var(--text-base);
       padding: 0 var(--space-4);
@@ -202,21 +113,6 @@
     .hero-actions .btn {
       width: 100%;
       justify-content: center;
-    }
-
-    .orb-blue {
-      width: 250px;
-      height: 250px;
-    }
-
-    .orb-cyan {
-      width: 200px;
-      height: 200px;
-    }
-
-    .orb-indigo {
-      width: 150px;
-      height: 150px;
     }
   }
 </style>
