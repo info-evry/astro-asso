@@ -56,5 +56,6 @@ coverage/
 # Temporary files
 PLAN.md
 
-# Generated fonts (created by compute script from design submodule)
+# Generated assets (created by compute script)
 public/fonts/
+public/og.png
