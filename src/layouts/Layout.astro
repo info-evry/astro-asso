@@ -25,7 +25,9 @@ const {
 } = Astro.props;
 
 // Ensure siteUrl has trailing slash for relative URL resolution
-const siteUrl = associationInfo.sites.asso.url.replace(/\/?$/, '/');
+const siteUrl = associationInfo.sites.asso.url.endsWith('/')
+  ? associationInfo.sites.asso.url
+  : associationInfo.sites.asso.url + '/';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
@@ -55,5 +57,5 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 </html>
 
 <style is:global>
-  @import '../styles/global.css';
+
 </style>
