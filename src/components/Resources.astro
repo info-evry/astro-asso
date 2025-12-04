@@ -1,6 +1,5 @@
 ---
 import SectionHeader from '../../design/src/components/SectionHeader.astro';
-import SFSymbol from '../../design/src/components/SFSymbol.astro';
 
 const resources = [
   {
@@ -47,14 +46,14 @@ const resources = [
           class="resource-card"
         >
           <div class="resource-icon">
-            <SFSymbol name={resource.icon} size="xl" />
+            <span class="sfs sfs-xl" data-sfs={`@sfs:${resource.icon}@`} aria-hidden="true"></span>
           </div>
           <div class="resource-content">
             <h3 class="resource-title">{resource.title}</h3>
             <p class="resource-description">{resource.description}</p>
           </div>
           <div class="resource-arrow">
-            <SFSymbol name="chevron.right" size="md" />
+            <span class="sfs sfs-md" data-sfs="@sfs:chevron.right@" aria-hidden="true"></span>
           </div>
         </a>
       ))}

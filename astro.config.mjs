@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import sfSymbols from './design/src/integrations/sf-symbols';
 
 export default defineConfig({
   output: 'static',
@@ -8,6 +9,7 @@ export default defineConfig({
       enabled: true
     }
   }),
+  integrations: [sfSymbols()],
   compressHTML: true,
   vite: {
     build: {

@@ -1,6 +1,5 @@
 ---
 import associationInfo from '../../knowledge/src/association/info.json';
-import SFSymbol from '../../design/src/components/SFSymbol.astro';
 
 const benefits = associationInfo.membership.benefits;
 ---
@@ -24,7 +23,7 @@ const benefits = associationInfo.membership.benefits;
         <ul class="benefits-list">
           {benefits.map(benefit => (
             <li class="benefit-item">
-              <span class="benefit-check"><SFSymbol name="checkmark" size="sm" /></span>
+              <span class="benefit-check"><span class="sfs sfs-sm" data-sfs="@sfs:checkmark@" aria-hidden="true"></span></span>
               <span>{benefit}</span>
             </li>
           ))}
@@ -36,7 +35,7 @@ const benefits = associationInfo.membership.benefits;
               S'inscrire
             </a>
             <a href={`mailto:${associationInfo.contact.assoEmail}?subject=Adhésion%20-%20Question`} class="btn btn-secondary btn-lg">
-              <SFSymbol name="envelope.fill" size="md" />
+              <span class="sfs sfs-md" data-sfs="@sfs:envelope.fill@" aria-hidden="true"></span>
               Nous contacter
             </a>
           </div>
