@@ -14,13 +14,13 @@
   "author": "Association Info Évry",
   "license": "AGPL-3.0-only",
   "dependencies": {
-    "astro": "^5.16.2",
+    "astro": "^5.16.4",
     "@astrojs/cloudflare": "^12.6.12"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
     "typescript": "^5.9.3",
     "vitest": "2.1.9",
-    "wrangler": "^4.51.0"
+    "wrangler": "^4.53.0"
   }
 }
