@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import { readFileSync, existsSync, readdirSync } from 'fs';
-import { join } from 'path';
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 
 const execAsync = promisify(exec);
 
@@ -10,12 +10,12 @@ describe('Build', () => {
   it('should build successfully', async () => {
     const { stderr } = await execAsync('bun run build', {
       cwd: process.cwd(),
-      timeout: 60000,
+      timeout: 60_000,
     });
 
     // Check no critical errors (warnings are ok)
     expect(stderr).not.toContain('ERROR');
-  }, 60000);
+  }, 60_000);
 
   it('should generate index.html', () => {
     const indexPath = join(process.cwd(), 'dist', 'index.html');
@@ -137,7 +137,7 @@ describe('Accessibility', () => {
 describe('Performance', () => {
   it('should have reasonable HTML size', () => {
     const indexPath = join(process.cwd(), 'dist', 'index.html');
-    const stats = require('fs').statSync(indexPath);
+    const stats = require('node:fs').statSync(indexPath);
     
     // HTML should be under 100KB (reasonable for a landing page)
     expect(stats.size).toBeLessThan(100 * 1024);
