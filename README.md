@@ -17,7 +17,7 @@ Official website for Asso Info Evry, the student association for Computer Scienc
 ## Tech Stack
 
 - **Framework**: Astro 5.x (static site generation)
-- **Hosting**: Cloudflare Pages
+- **Hosting**: Cloudflare Workers
 - **Design**: Shared design system via git submodule
 - **Content**: Shared knowledge base via git submodule
 - **Styling**: CSS with custom properties (design tokens)
@@ -86,7 +86,7 @@ bun run build
 
 ### Deploy
 
-Deployment is handled via Cloudflare Pages CI.
+Deployment is handled via Cloudflare Workers.
 
 ```bash
 # Preview build locally
