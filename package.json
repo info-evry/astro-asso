@@ -19,7 +19,7 @@
   "author": "Association Info Évry",
   "license": "AGPL-3.0-only",
   "dependencies": {
-    "astro": "^6.4.8",
+    "astro": "^7.3.3",
     "@info-evry/astro-design": "workspace:*",
     "@info-evry/knowledge": "workspace:*"
   },
