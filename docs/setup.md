@@ -10,11 +10,9 @@ This guide walks you through setting up the Info Evry association website.
 ## Step 1: Clone the Repository
 
 ```bash
-# Clone with submodules
-git clone --recursive git@github.com:info-evry/astro-asso.git
-cd astro-asso
-
-# Install dependencies
+# Clone the maestro repo (this project is part of its Bun workspace)
+git clone git@github.com:info-evry/astro-maestro.git
+cd astro-maestro
 bun install
 ```
 
@@ -45,12 +43,6 @@ bun run deploy
 ```
 
 ## Troubleshooting
-
-### Build fails with submodule errors
-
-```bash
-git submodule update --init --recursive
-```
 
 ### "Invalid binding SESSION" warning
 

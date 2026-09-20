@@ -10,12 +10,19 @@
     "test:watch": "vitest",
     "check": "astro check"
   },
-  "keywords": ["astro", "cloudflare", "workers", "landing-page"],
+  "keywords": [
+    "astro",
+    "cloudflare",
+    "workers",
+    "landing-page"
+  ],
   "author": "Association Info Évry",
   "license": "AGPL-3.0-only",
   "dependencies": {
     "astro": "^5.16.4",
-    "@astrojs/cloudflare": "^12.6.12"
+    "@astrojs/cloudflare": "^12.6.12",
+    "@info-evry/astro-design": "workspace:*",
+    "@info-evry/knowledge": "workspace:*"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",

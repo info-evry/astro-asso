@@ -18,8 +18,8 @@ Official website for Asso Info Evry, the student association for Computer Scienc
 
 - **Framework**: Astro 5.x (static site generation)
 - **Hosting**: Cloudflare Workers
-- **Design**: Shared design system via git submodule
-- **Content**: Shared knowledge base via git submodule
+- **Design**: Shared design system via the maestro Bun workspace (`@info-evry/astro-design`)
+- **Content**: Shared knowledge base via the maestro Bun workspace (`@info-evry/knowledge`)
 - **Styling**: CSS with custom properties (design tokens)
 
 ## Project Structure
@@ -39,8 +39,6 @@ astro-asso/
 │   │   └── Membership.astro  # Join the association
 │   └── layouts/
 │       └── Layout.astro      # Base layout with MobileNav
-├── design/                   # Shared design system (submodule)
-├── knowledge/                # Shared content (submodule)
 ├── public/
 │   ├── fonts/               # SF Symbols font
 │   ├── favicon.svg          # Site favicon
@@ -59,14 +57,9 @@ astro-asso/
 ### Installation
 
 ```bash
-# Clone with submodules
-git clone --recursive https://github.com/info-evry/astro-asso.git
-cd astro-asso
-
-# Or init submodules if already cloned
-git submodule update --init --recursive
-
-# Install dependencies
+# Clone the maestro repo (this project is part of its Bun workspace)
+git clone https://github.com/info-evry/astro-maestro.git
+cd astro-maestro
 bun install
 ```
 
@@ -112,30 +105,18 @@ The site uses a floating tab bar on mobile (via `MobileNav` from the design syst
 - NDI → `#ndi`
 - Rejoindre (CTA) → `/adhesion`
 
-## Updating Submodules
+## Updating Shared Packages
 
-When the design system or knowledge base is updated:
-
-```bash
-# Update both submodules to latest
-git submodule update --remote
-
-# Or update individually
-git submodule update --remote design
-git submodule update --remote knowledge
-
-# Commit the update
-git add design knowledge
-git commit -m "Update submodules"
-git push
-```
+The design system (`@info-evry/astro-design`) and knowledge base (`@info-evry/knowledge`) are
+maestro Bun workspace packages under `projects/`. Update them by editing those projects directly
+and running `bun install` from the maestro root.
 
 ## Related Repositories
 
-- [astro-design](https://github.com/info-evry/astro-design) - Shared design system
-- [astro-knowledge](https://github.com/info-evry/astro-knowledge) - Shared content
-- [astro-ndi](https://github.com/info-evry/astro-ndi) - NDI registration platform
-- [astro-join](https://github.com/info-evry/astro-join) - Membership portal
+- `astro-design` (`@info-evry/astro-design` workspace package) - Shared design system
+- `astro-knowledge` (`@info-evry/knowledge` workspace package) - Shared content
+- `astro-ndi` (maestro workspace project) - NDI registration platform
+- `astro-join` (maestro workspace project) - Membership portal
 
 ## License
 

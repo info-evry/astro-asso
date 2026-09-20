@@ -1,7 +1,7 @@
 /* Association Info Evry - Styles */
 /* Imports shared design system and adds asso-specific overrides */
 
-@import '../../design/src/index.css';
+@import '@info-evry/astro-design';
 
 /* ============================================
    Asso-Specific Overrides
