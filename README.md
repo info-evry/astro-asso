@@ -16,7 +16,7 @@ Official website for Asso Info Evry, the student association for Computer Scienc
 
 ## Tech Stack
 
-- **Framework**: Astro 5.x (static site generation)
+- **Framework**: Astro 6.x (static site generation)
 - **Hosting**: Cloudflare Workers
 - **Design**: Shared design system via the maestro Bun workspace (`@info-evry/astro-design`)
 - **Content**: Shared knowledge base via the maestro Bun workspace (`@info-evry/knowledge`)

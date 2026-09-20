@@ -44,13 +44,8 @@ bun run deploy
 
 ## Troubleshooting
 
-### "Invalid binding SESSION" warning
-
-Either add a KV binding or create an empty `.assetsignore` in public/:
-
-```bash
-touch public/.assetsignore
-```
+astro-asso is a static site (`output: 'static'`) with no Cloudflare adapter, so
+there is no SESSION KV binding or `.assetsignore` to manage here.
 
 ## Next Steps
 

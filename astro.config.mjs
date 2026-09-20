@@ -1,14 +1,8 @@
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
 import sfSymbols from '@info-evry/astro-design/integrations/sf-symbols';
 
 export default defineConfig({
   output: 'static',
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true
-    }
-  }),
   integrations: [sfSymbols()],
   compressHTML: true,
   vite: {
