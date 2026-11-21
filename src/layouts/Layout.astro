@@ -7,7 +7,7 @@ import associationInfo from '@info-evry/knowledge/association';
 const mobileNavItems = [
   { href: '#a-propos', label: 'À propos', icon: 'info.circle' },
   { href: '#ressources', label: 'Ressources', icon: 'book' },
-  { href: '#ndi', label: 'NDI', icon: 'moon.stars' }
+  { href: '#ndi', label: 'NDI', icon: 'moon.stars' },
 ];
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
 const {
   title,
   description = "Association des Étudiants en Informatique de l'Université d'Évry Val-d'Essonne",
-  image = 'og.jpg',
+  image = "og.jpg",
   noindex = false
 } = Astro.props;
 
@@ -30,22 +30,27 @@ const siteUrl = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <Head
-      title={title}
-      description={description}
-      image={image}
-      noindex={noindex}
-      canonicalUrl={canonicalUrl}
-      siteName={associationInfo.name}
-      author={associationInfo.fullName}
-    />
-  </head>
-  <body>
-    <slot />
+<head>
+  <Head
+    title={title}
+    description={description}
+    image={image}
+    noindex={noindex}
+    canonicalUrl={canonicalUrl}
+    siteName={associationInfo.name}
+    author={associationInfo.fullName}
+  />
+</head>
+<body>
+  <slot />
 
-    <MobileNav items={mobileNavItems} ctaHref="/adhesion" ctaLabel="Rejoindre" ctaIcon="person.badge.plus" />
-  </body>
+  <MobileNav
+    items={mobileNavItems}
+    ctaHref="/adhesion"
+    ctaLabel="Rejoindre"
+    ctaIcon="person.badge.plus"
+  />
+</body>
 </html>

@@ -16,15 +16,14 @@ const benefits = associationInfo.membership.benefits;
         <span class="section-label">Adhésion</span>
         <h2 class="enroll-title">Rejoindre {associationInfo.name}</h2>
         <p class="enroll-description">
-          Devenez membre de l'{associationInfo.fullName} et accédez à toutes les ressources de la communauté étudiante.
+          Devenez membre de l'{associationInfo.fullName} et accédez
+          à toutes les ressources de la communauté étudiante.
         </p>
 
         <ul class="benefits-list">
-          {benefits.map((benefit) => (
+          {benefits.map(benefit => (
             <li class="benefit-item">
-              <span class="benefit-check">
-                <span class="sfs sfs-sm" data-sfs="@sfs:checkmark@" aria-hidden="true"></span>
-              </span>
+              <span class="benefit-check"><span class="sfs sfs-sm" data-sfs="@sfs:checkmark@" aria-hidden="true"></span></span>
               <span>{benefit}</span>
             </li>
           ))}
@@ -35,10 +34,7 @@ const benefits = associationInfo.membership.benefits;
             <a href="/adhesion" class="btn btn-primary btn-lg">
               S'inscrire
             </a>
-            <a
-              href={`mailto:${associationInfo.contact.assoEmail}?subject=Adhésion%20-%20Question`}
-              class="btn btn-secondary btn-lg"
-            >
+            <a href={`mailto:${associationInfo.contact.assoEmail}?subject=Adhésion%20-%20Question`} class="btn btn-secondary btn-lg">
               <span class="sfs sfs-md" data-sfs="@sfs:envelope.fill@" aria-hidden="true"></span>
               Nous contacter
             </a>

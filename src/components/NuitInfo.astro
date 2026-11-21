@@ -8,7 +8,9 @@ import ndiEvent from '@info-evry/knowledge/ndi/event';
       <div class="ndi-content">
         <span class="section-label">Événement annuel</span>
         <h2 class="ndi-title">{ndiEvent.name}</h2>
-        <p class="ndi-description">{ndiEvent.description}</p>
+        <p class="ndi-description">
+          {ndiEvent.description}
+        </p>
 
         <div class="ndi-features">
           <div class="feature-item">
@@ -223,15 +225,9 @@ import ndiEvent from '@info-evry/knowledge/ndi/event';
     border-radius: 50%;
   }
 
-  .code-dot.red {
-    background: #ff5f56;
-  }
-  .code-dot.yellow {
-    background: #ffbd2e;
-  }
-  .code-dot.green {
-    background: #27ca40;
-  }
+  .code-dot.red { background: #ff5f56; }
+  .code-dot.yellow { background: #ffbd2e; }
+  .code-dot.green { background: #27ca40; }
 
   .code-title {
     margin-left: var(--space-3);
@@ -256,21 +252,11 @@ import ndiEvent from '@info-evry/knowledge/ndi/event';
     color: var(--color-text-secondary);
   }
 
-  .code-keyword {
-    color: #c678dd;
-  }
-  .code-var {
-    color: #e5c07b;
-  }
-  .code-prop {
-    color: #e06c75;
-  }
-  .code-string {
-    color: #98c379;
-  }
-  .code-func {
-    color: #61afef;
-  }
+  .code-keyword { color: #c678dd; }
+  .code-var { color: #e5c07b; }
+  .code-prop { color: #e06c75; }
+  .code-string { color: #98c379; }
+  .code-func { color: #61afef; }
 
   @media (max-width: 900px) {
     .ndi-wrapper {
