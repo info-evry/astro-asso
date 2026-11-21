@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const execAsync = promisify(exec);
@@ -137,7 +137,7 @@ describe('Accessibility', () => {
 describe('Performance', () => {
   it('should have reasonable HTML size', () => {
     const indexPath = join(process.cwd(), 'dist', 'index.html');
-    const stats = require('node:fs').statSync(indexPath);
+    const stats = statSync(indexPath);
     
     // HTML should be under 100KB (reasonable for a landing page)
     expect(stats.size).toBeLessThan(100 * 1024);

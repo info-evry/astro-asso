@@ -19,14 +19,14 @@
   "author": "Association Info Évry",
   "license": "AGPL-3.0-only",
   "dependencies": {
-    "astro": "^7.3.3",
+    "astro": "^7.4.13",
     "@info-evry/astro-design": "workspace:*",
     "@info-evry/knowledge": "workspace:*"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.11",
-    "wrangler": "^4.135.0"
+    "vitest": "^4.1.12",
+    "wrangler": "^4.166.0"
   }
 }
