@@ -10,7 +10,7 @@ describe('Build', () => {
   it('should build successfully', async () => {
     const { stderr } = await execAsync('bun run build', {
       cwd: process.cwd(),
-      timeout: 60_000,
+      timeout: 60_000
     });
 
     // Check no critical errors (warnings are ok)
@@ -31,7 +31,7 @@ describe('Build', () => {
     expect(content).toContain('Informatique');
     expect(content).toContain('Évry');
     expect(content).toContain('1993');
-    expect(content).toContain('Nuit de l\'Info');
+    expect(content).toContain("Nuit de l'Info");
   });
 
   it('should have proper meta tags', () => {
@@ -126,7 +126,7 @@ describe('Accessibility', () => {
 
     // Should have h1
     expect(content).toContain('<h1');
-    
+
     // h1 should appear before h2
     const h1Index = content.indexOf('<h1');
     const h2Index = content.indexOf('<h2');
@@ -138,7 +138,7 @@ describe('Performance', () => {
   it('should have reasonable HTML size', () => {
     const indexPath = join(process.cwd(), 'dist', 'index.html');
     const stats = statSync(indexPath);
-    
+
     // HTML should be under 100KB (reasonable for a landing page)
     expect(stats.size).toBeLessThan(100 * 1024);
   });

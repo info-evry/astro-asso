@@ -22,7 +22,7 @@ beforeAll(() => {
   html = readFileSync(join(dist, 'index.html'), 'utf-8');
 });
 
-describe('Nuit de l\'Info data on the homepage', () => {
+describe("Nuit de l'Info data on the homepage", () => {
   it('shows the edition from the knowledge package', () => {
     expect(html).toContain(event.edition);
   });

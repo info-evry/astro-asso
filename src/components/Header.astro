@@ -4,14 +4,8 @@ import Header from '@info-evry/astro-design/components/Header.astro';
 const navLinks = [
   { href: '#a-propos', label: 'À propos' },
   { href: '#ressources', label: 'Ressources' },
-  { href: '#ndi', label: 'Nuit de l\'Info' },
+  { href: '#ndi', label: "Nuit de l'Info" }
 ];
 ---
 
-<Header
-  homeUrl="/"
-  navLinks={navLinks}
-  ctaHref="#rejoindre"
-  ctaLabel="Adhérer"
-  mobileCta="Adhérer à l'association"
-/>
+<Header homeUrl="/" navLinks={navLinks} ctaHref="#rejoindre" ctaLabel="Adhérer" mobileCta="Adhérer à l'association" />
